@@ -1,7 +1,9 @@
 // Header: keep the page clear of the fixed header, and hide it while scrolling down
 var header = document.querySelector('.site-header');
 function setHeaderHeight() {
-  document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  if (!header.classList.contains('scrolled')) {
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
 }
 setHeaderHeight();
 window.addEventListener('resize', setHeaderHeight);
@@ -9,6 +11,7 @@ var lastY = window.scrollY;
 window.addEventListener('scroll', function () {
   var y = window.scrollY;
   header.classList.toggle('hide', y > lastY && y > header.offsetHeight && !header.classList.contains('menu-open'));
+  header.classList.toggle('scrolled', y > 0);
   lastY = y;
 }, { passive: true });
 

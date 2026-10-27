@@ -24,4 +24,5 @@ Plain static copy of the Squarespace site, rebuilt October 2026. No build step: 
 
 - **Fonts:** Squarespace's Granville and Brandon Grotesque are licensed for Squarespace only, so the site uses close open-licence matches (Lora and Jost).
 - **Email sign-up** still uses the Constant Contact form, which works on any site.
+- **Forms** (expungement eligibility, giving circle) send through FormSubmit (formsubmit.co) to the address in each form's `data-endpoint`. Until that is filled in, the form says it is not connected yet.
 - **Old addresses** such as `/get-involved` and `/home` are small redirect pages.
