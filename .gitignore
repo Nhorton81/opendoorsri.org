@@ -1,0 +1,7 @@
+.DS_Store
+.claude/
+# Long videos: not committed until we decide between YouTube and smaller files
+video/9-yards-program.mp4
+video/employment-services.mp4
+video/our-story.mp4
+video/probation-reform-freeing-the-innocent.mp4
