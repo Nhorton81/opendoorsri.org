@@ -24,5 +24,5 @@ Plain static copy of the Squarespace site, rebuilt October 2026. No build step: 
 
 - **Fonts:** Squarespace's Granville and Brandon Grotesque are licensed for Squarespace only, so the site uses close open-licence matches (Lora and Jost).
 - **Email sign-up** still uses the Constant Contact form, which works on any site.
-- **Forms** (expungement eligibility, giving circle) send through FormSubmit (formsubmit.co) to the address in each form's `data-endpoint`. Until that is filled in, the form says it is not connected yet.
+- **Forms** send through FormSubmit (formsubmit.co) to the address in each form's `data-endpoint`: the expungement form to fhunter@opendoorsri.org, the giving circle form to admin@opendoorsri.org. The first submission to each address sends that inbox a one-time activation email from FormSubmit, which has to be clicked before submissions arrive.
 - **Old addresses** such as `/get-involved` and `/home` are small redirect pages.
