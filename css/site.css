@@ -154,6 +154,8 @@ p { margin: 1rem 0; line-height: 1.2; }
   white-space: nowrap;
 }
 .site-nav .folder:hover ul, .site-nav .folder:focus-within ul, .site-nav .folder.open ul { display: block; }
+/* The last menu (Get Involved) opens leftward so it stays on screen */
+@media (min-width: 768px) { .site-nav > ul > .folder:last-child ul { left: auto; right: -1em; text-align: right; } }
 .site-nav .folder ul a { padding: .25em 0; }
 .site-nav .folder ul a:hover, .site-nav .folder ul a[aria-current] { text-decoration: underline; text-underline-offset: .2em; }
 .menu-toggle { display: none; }
