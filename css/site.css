@@ -5,16 +5,15 @@
    row-start / column-start / row-end / column-end. */
 
 /* Open-licence stand-ins for the Squarespace-only fonts
-   (Granville becomes Lora, Brandon Grotesque becomes Jost). The size-adjust
-   values match each one's text width to the font it replaces. */
-@font-face { font-family: "Lora"; src: url(../fonts/lora-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; size-adjust: 98%; }
-@font-face { font-family: "Lora"; src: url(../fonts/lora-700-normal.woff2) format("woff2"); font-weight: 700; font-style: normal; font-display: swap; size-adjust: 98%; }
-@font-face { font-family: "Lora"; src: url(../fonts/lora-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; size-adjust: 98%; }
-@font-face { font-family: "Lora"; src: url(../fonts/lora-700-italic.woff2) format("woff2"); font-weight: 700; font-style: italic; font-display: swap; size-adjust: 98%; }
-@font-face { font-family: "Jost"; src: url(../fonts/jost-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; size-adjust: 92%; }
-@font-face { font-family: "Jost"; src: url(../fonts/jost-600-normal.woff2) format("woff2"); font-weight: 700; font-style: normal; font-display: swap; size-adjust: 88%; }
-@font-face { font-family: "Jost"; src: url(../fonts/jost-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; size-adjust: 92%; }
-@font-face { font-family: "Jost"; src: url(../fonts/jost-600-italic.woff2) format("woff2"); font-weight: 700; font-style: italic; font-display: swap; size-adjust: 88%; }
+   (Granville becomes Tenor Sans, Brandon Grotesque becomes Josefin Sans). The
+   size-adjust values match each one's text width to the font it replaces.
+   Tenor Sans has no bold, so its one weight covers the whole range rather than
+   letting the browser fake a bold. */
+@font-face { font-family: "Tenor Sans"; src: url(../fonts/tenor-sans-400-normal.woff2) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; size-adjust: 96%; }
+@font-face { font-family: "Josefin Sans"; src: url(../fonts/josefin-sans-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; size-adjust: 88%; }
+@font-face { font-family: "Josefin Sans"; src: url(../fonts/josefin-sans-600-normal.woff2) format("woff2"); font-weight: 700; font-style: normal; font-display: swap; size-adjust: 88%; }
+@font-face { font-family: "Josefin Sans"; src: url(../fonts/josefin-sans-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; size-adjust: 88%; }
+@font-face { font-family: "Josefin Sans"; src: url(../fonts/josefin-sans-600-italic.woff2) format("woff2"); font-weight: 700; font-style: italic; font-display: swap; size-adjust: 88%; }
 
 :root {
   /* Squarespace palette names (note "white" is the dark green and "black" the beige) */
@@ -26,8 +25,8 @@
   --safeLight: #fff;
   --safeDark: #333435;
 
-  --heading-font: "Lora", Georgia, serif;
-  --body-font: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Tenor Sans", Optima, Candara, sans-serif;
+  --body-font: "Josefin Sans", "Helvetica Neue", Arial, sans-serif;
   --max: 2074px;
   --header-h: 138px;
 }
