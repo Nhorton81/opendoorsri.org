@@ -450,7 +450,6 @@ main > .sec:first-child { padding-top: calc(var(--pt, 0px) + var(--header-h)); }
 .stories-intro .lead { --s: 1.5; max-width: 34em; margin: 0 auto 3rem; }
 .keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 0; }
 .keys img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-.keys figcaption { --s: 1; grid-column: 1 / -1; margin-top: .5rem; font-style: italic; }
 @media (max-width: 767px) {
   .keys { grid-template-columns: repeat(3, 1fr); }
   .keys img:nth-child(n+4) { display: none; }
