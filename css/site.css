@@ -440,7 +440,7 @@ main > .sec:first-child { padding-top: calc(var(--pt, 0px) + var(--header-h)); }
 .banner .media { position: absolute; inset: 0; width: 100%; aspect-ratio: auto; }
 .banner .media::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, .3); }
 .banner .item-content { position: relative; width: var(--content-w, 56%); flex: none; padding: 2%; background: var(--card); color: var(--card-text); }
-.banner .item-title { color: var(--card-text); }
+.banner .item-title { color: var(--card-text); margin-bottom: .9em; }
 @media (max-width: 767px) { .banner .item-content { width: 88%; } }
 
 
