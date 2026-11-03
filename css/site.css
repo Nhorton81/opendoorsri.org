@@ -376,6 +376,7 @@ main > .sec:first-child { padding-top: calc(var(--pt, 0px) + var(--header-h)); }
   border-radius: 0;
 }
 .site-form textarea { min-height: 100px; resize: vertical; }
+.site-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .site-form .check { flex-direction: row; align-items: flex-start; gap: .6rem; margin: .4rem 0; }
 .site-form .check input { margin-top: .2em; flex: none; }
 .site-form button { align-self: flex-start; }

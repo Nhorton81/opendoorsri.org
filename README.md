@@ -24,5 +24,5 @@ Plain static copy of the Squarespace site, rebuilt October 2026. No build step: 
 
 - **Fonts:** Squarespace's Granville and Brandon Grotesque are licensed for Squarespace only, so the site uses close open-licence matches (Ysabeau Office and Jost).
 - **Email sign-up** still uses the Constant Contact form, which works on any site.
-- **Forms** send through FormSubmit (formsubmit.co) to the address in each form's `data-endpoint`: the expungement form to fhunter@opendoorsri.org, the giving circle form to admin@opendoorsri.org. The first submission to each address sends that inbox a one-time activation email from FormSubmit, which has to be clicked before submissions arrive.
+- **Forms** post to a Google Apps Script on the OpenDoors Google account (its address is `FORM_ENDPOINT` in `js/site.js`), which emails each one: expungement to fhunter@, giving circle to admin@. The recipients are set in the script, not on the site. A copy of the script and setup steps are in `OpenDoors Docs/website-forms/`.
 - **Old addresses** such as `/get-involved` and `/home` are small redirect pages.

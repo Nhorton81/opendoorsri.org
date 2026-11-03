@@ -93,32 +93,33 @@ document.querySelectorAll('.carousel').forEach(function (c) {
   c.querySelector('.next').addEventListener('click', function () { step(1); });
 });
 
-// Forms: FormSubmit (formsubmit.co) emails each submission to the address in data-endpoint
+// Forms: each submission goes to the OpenDoors Google Apps Script, which emails it.
+// The script (kept in Google, not in this repo) decides who receives each form.
+var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz10YH_JyGkPqwOeATxBgi2VZXE5MTI6mnQ27xjv1yyxAI9-iAPX2M3FD_haq4r7Vg/exec';
 document.querySelectorAll('form.site-form').forEach(function (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var endpoint = form.dataset.endpoint;
     var thanks = form.querySelector('.thanks');
     var button = form.querySelector('button[type=submit]');
-    if (!endpoint) {
+    if (!FORM_ENDPOINT) {
       alert('This form is not connected yet.');
       return;
     }
-    var data = {};
-    new FormData(form).forEach(function (value, key) { data[key] = value; });
-    data._subject = form.dataset.subject + ' (website form)';
-    data._template = 'table';
-    data._captcha = 'false';
+    var fields = [], hp = '';
+    new FormData(form).forEach(function (value, key) {
+      if (key === '_hp') hp = value;
+      else fields.push([key, value]);
+    });
     button.disabled = true;
-    fetch(endpoint, {
+    // text/plain keeps this a simple request, which Apps Script accepts from other sites
+    fetch(FORM_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ form: form.dataset.form, hp: hp, fields: fields })
     }).then(function (res) {
-      return res.json().then(function (d) {
-        if (!res.ok || String(d.success) !== 'true') throw new Error(d.message);
-      });
-    }).then(function () {
+      return res.json();
+    }).then(function (d) {
+      if (!d.ok) throw new Error('not sent');
       Array.prototype.forEach.call(form.children, function (el) { if (el !== thanks) el.hidden = true; });
       thanks.hidden = false;
     }).catch(function () {
