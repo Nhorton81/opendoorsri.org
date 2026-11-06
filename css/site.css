@@ -280,6 +280,13 @@ main > .sec:first-child { padding-top: calc(var(--pt, 0px) + var(--header-h)); }
 .text ul, .text ol, .acc-body ul, .acc-body ol { margin: 1rem 0; padding-left: 40px; }
 .text li > *, .acc-body li > *, .item-body li > * { margin: .5em 0; }
 .text blockquote { margin: 1rem 0; padding-left: 1em; border-left: 2px solid currentColor; }
+/* Feature card for an article: label, title, byline, pull quote, button */
+.text.article-card { align-self: start; margin-top: 1.2rem; border: 2px solid var(--line); padding: clamp(1.2rem, 2vw, 2rem); }
+.article-card .kicker { font-size: .85em; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .6rem; }
+.text.article-card > h2 { --s: 2; margin-bottom: .8rem; }
+.text.article-card > blockquote { margin: .4rem 0 1.4rem; border-left-width: 3px; }
+.article-card blockquote p { --s: 1.4; font-family: var(--heading-font); font-style: italic; margin: 0; }
+.article-card .btn { align-self: flex-start; text-decoration: none; }
 .boxed { background: var(--box); }
 .text { padding: var(--tp, 0); }
 /* Headings that grow to fill their box, like Squarespace's scaled text */
