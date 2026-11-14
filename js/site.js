@@ -65,14 +65,15 @@ fitText();
 window.addEventListener('resize', fitText);
 if (document.fonts) document.fonts.ready.then(fitText);
 
-// Background videos play at the speed set on the old site. Like the old site,
-// phones get the plain background colour instead of the video.
+// Background videos play at the speed set on the old site. Phones get the
+// smaller data-src-mobile file when there is one, otherwise no video.
 document.querySelectorAll('.sec-bg video[data-src]').forEach(function (v) {
-  if (window.matchMedia('(max-width: 767px)').matches) {
+  var phone = window.matchMedia('(max-width: 767px)').matches;
+  if (phone && !v.dataset.srcMobile) {
     v.remove();
     return;
   }
-  v.src = v.dataset.src;
+  v.src = phone ? v.dataset.srcMobile : v.dataset.src;
   v.playbackRate = parseFloat(v.dataset.speed) || 1;
   v.addEventListener('play', function () { v.playbackRate = parseFloat(v.dataset.speed) || 1; });
 });
